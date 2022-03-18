@@ -100,5 +100,55 @@ AND d2.dept_no = d1.dept_no
 ORDER BY d1.dept_no;
 ```
 
+> 不懂
+
+
+
+
+
+
+
+**[SQL 15 查找employees表信息](https://www.nowcoder.com/practice/a32669eb1d1740e785f105fa22741d5c?tpId=82&tqId=29767&rp=1&ru=/ta/sql&qru=/ta/sql&difficulty=&judgeStatus=&tags=/question-ranking)**
+
+```sql
+select * from employees
+where emp_no & 1
+and last_name <> 'Mary'
+order by hire_date desc;
+```
+
+> 奇数用&
+>
+> 偶数用emp_no = (emp_no >> 1 << 1)
+>
+> 不等于用<> 更快一点
+
+
+
+
+
+**[SQL 18 工资第二高的员工信息(不准用orderby)](https://www.nowcoder.com/practice/c1472daba75d4635b7f8540b837cc719?tpId=82&tags=&title=&difficulty=0&judgeStatus=0&rp=1&sourceUrl=)**
+
+```sql
+#构造出第二高的薪水，不具有扩展性
+select e.emp_no, s.salary, e.last_name, e.first_name
+from employees e
+join salaries s
+on e.emp_no = s.emp_no
+where s.salary = (
+    select max(salary)
+    from salaries
+    where salary < (
+        select max(salary)
+        from salaries
+    )
+)
+
+#自连接
+
+```
+
+> **[自连接题解](https://blog.nowcoder.net/n/f35b41269fd84707a748724827510e23?f=comment)**
+
 
 
