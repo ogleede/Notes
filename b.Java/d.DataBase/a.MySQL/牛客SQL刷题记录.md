@@ -152,3 +152,31 @@ where s.salary = (
 
 
 
+**[SQL 19 三表连接](https://www.nowcoder.com/practice/5a7975fabe1146329cee4f670c27ad55?tpId=82&tqId=29771&rp=1&ru=/exam/oj&qru=/exam/oj&sourceUrl=%2Fexam%2Foj%3Ftab%3DSQL%25E7%25AF%2587%26topicId%3D82&difficulty=undefined&judgeStatus=undefined&tags=&title=)**
+
+```sql
+#三表连接
+select e.last_name, e.first_name, d.dept_name
+from employees e
+left join dept_emp de
+on de.emp_no = e.emp_no
+left join departments d
+on d.dept_no = de.dept_no;
+
+#子查询
+select last_name, first_name, dept_name
+from(
+    select e.first_name, e.last_name, e.hire_date, d.to_date, d.dept_no
+    from employees e
+    left join dept_emp d
+    on e.emp_no = d.emp_no
+) as a
+left join departments
+on a.dept_no = departments.dept_no;
+```
+
+
+
+
+
+**[]()**
