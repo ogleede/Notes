@@ -14,5 +14,5 @@ git push --set-upstream origin main
 
 修改当前仓库的.git文件夹下面的config文件
 
-如果想用一个token修改多个仓库：
+如果想用一个token修改多个仓库：url配置成git@github.com:${username}/${repo}.git
 
