@@ -10,3 +10,9 @@ git remote add origin https://新的token@github.com/账号名称/仓库名字.g
 
 git push --set-upstream origin main
 
+
+
+修改当前仓库的.git文件夹下面的config文件
+
+如果想用一个token修改多个仓库：
+
