@@ -16,3 +16,10 @@ git push --set-upstream origin main
 
 如果想用一个token修改多个仓库：url配置成git@github.com:${username}/${repo}.git
 
+
+
+本地仓库需要同步远程仓库的内容：
+
+git fetch origin 					将main分支的内容同步到origin分支
+
+git merge origin/main		将origin的更改合并到main中，内容更新完成
